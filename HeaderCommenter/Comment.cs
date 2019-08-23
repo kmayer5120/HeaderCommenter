@@ -38,7 +38,7 @@ namespace HeaderCommenter
             comment += $" * Filename:\t{Filename, padding}\n";
             comment += $" * Date:\t\t{Date, padding}\n";
             comment += "*************************************************/";
-            Console.WriteLine(comment);
+
             return comment;
         }
     }

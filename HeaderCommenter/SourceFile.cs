@@ -26,10 +26,6 @@ namespace HeaderCommenter
             if (Filename == null) return false;
 
             fileContents = File.ReadLines(Filename).ToList();
-            foreach (string line  in fileContents)
-            {
-                Console.WriteLine(line); 
-            }
 
             return true;
         }
@@ -38,7 +34,6 @@ namespace HeaderCommenter
         {
             if (fileContents == null) return false;
 
-            //File.WriteAllText(Filename, Comment.ToString()); 
             fileContents.Insert(0, Comment.ToString());
             File.WriteAllLines(Filename, fileContents);
             return true;
