@@ -1,4 +1,11 @@
-﻿using System;
+/*************************************************
+ * Name:		Kyle Mayer                              
+ * Email:		kmayer1@cnm.edu                         
+ * Program:		Header Commenter                        
+ * Filename:	MainWindow.xaml.cs                      
+ * Date:		08/23/2019                              
+*************************************************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
