@@ -121,7 +121,17 @@ namespace HeaderCommenter
                 //split up filename so comment doesn't have full path
                 int start = file.LastIndexOf("\\") + 1;
                 string filename = file.Substring(start);
-                Comment comment = new Comment(name, email, date, program, filename);
+
+                //use polymorphism to use appropriate comment style for different languages
+                Comment comment;
+                if (cbxFileExtensions.SelectedItem.Equals(".py"))
+                {
+                    comment = new PythonComment(name, email, date, program, filename);
+                }
+                else
+                {
+                    comment = new Comment(name, email, date, program, filename);
+                }
                 sourceFiles.Add(new SourceFile(file, comment)); 
             }
             
