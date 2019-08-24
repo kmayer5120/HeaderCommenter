@@ -10,12 +10,15 @@ using System.Drawing;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms.VisualStyles;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Win32;
+using CommonDialog = System.Windows.Forms.CommonDialog;
+using MessageBox = System.Windows.MessageBox;
 using Path = System.IO.Path;
 
 namespace HeaderCommenter
@@ -36,7 +39,7 @@ namespace HeaderCommenter
         public MainWindow()
         {
             //contains extensions for combo box
-            fileExtensions = new List<string>() {".cs", ".java", ".py", ".cpp"};
+            fileExtensions = new List<string>() {".cs", ".java", ".py", ".cpp", ".c"};
             //contains the filepaths for the list view
             filePaths = new List<string>();
             //contains list of source files to be commented
@@ -83,9 +86,24 @@ namespace HeaderCommenter
         {
             foreach (var sourceFile in sourceFiles)
             {
-                //TODO add exception handling
-                sourceFile.ReadFile();
-                sourceFile.WriteFile();
+                if (!sourceFile.ReadFile())
+                {
+                    //show dialog saying file could not be read from
+                    MessageBox.Show(
+                        $"File {sourceFile.Comment.Filename} " +
+                        $"could not be read. Please ensure that file exists and try again.");
+                    break;
+                }
+
+                if (!sourceFile.WriteFile())
+                {
+                    //show dialog saying file could not be written to
+                    MessageBox.Show(
+                        $"File {sourceFile.Comment.Filename} " +
+                        $"could not be written to. Please ensure that file exists and try again.");
+                    break;
+                }
+                
             }
         }
 
@@ -95,14 +113,13 @@ namespace HeaderCommenter
             string email = txtEmail.Text;
             string program = txtProgram.Text;
             string date = txtDate.Text;
-            Comment comment = new Comment(name, email, date, program, "");
-
 
             foreach (var file in filePaths)
             {
                 //split up filename so comment doesn't have full path
                 int start = file.LastIndexOf("\\") + 1;
-                comment.Filename = file.Substring(start);
+                string filename = file.Substring(start);
+                Comment comment = new Comment(name, email, date, program, filename);
                 sourceFiles.Add(new SourceFile(file, comment)); 
             }
             
