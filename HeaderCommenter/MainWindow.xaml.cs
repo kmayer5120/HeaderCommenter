@@ -103,8 +103,8 @@ namespace HeaderCommenter
                         $"could not be written to. Please ensure that file exists and try again.");
                     break;
                 }
-                
             }
+            MessageBox.Show("Comments have been written to all files.");
         }
 
         private void btnSetFilesForComments_Click(object sender, RoutedEventArgs e)
