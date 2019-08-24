@@ -52,6 +52,8 @@ namespace HeaderCommenter
             folderBrowserDialog = new FolderBrowserDialog();
 
             lvFiles.DataContext = filePaths;
+            //change column header for ListView
+            ((GridView)lvFiles.View).Columns[0].Header = "File";
         }
 
 

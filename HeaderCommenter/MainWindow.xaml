@@ -5,19 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HeaderCommenter"
         mc:Ignorable="d"
-        Title="Header Commenter" Height="674.775" Width="671.451">
-    <Grid>
+        Title="Header Commenter" Height="674.775" Width="819.951">
+    <Grid Background="#FF0F1229">
+        <Rectangle Fill="#FF4B5F93" HorizontalAlignment="Left" Height="221" Margin="10,51,0,0" Stroke="Black" VerticalAlignment="Top" Width="278"/>
+
         <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="124,443,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138"/>
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="124,471,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138"/>
         <TextBox x:Name="txtProgram" HorizontalAlignment="Left" Height="23" Margin="124,499,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138"/>
         <TextBox x:Name="txtDate" HorizontalAlignment="Left" Height="23" Margin="124,527,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138"/>
-        <Label x:Name="lblName" Content="Name" HorizontalAlignment="Left" Margin="13,443,0,0" VerticalAlignment="Top" Width="48"/>
-        <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="13,471,0,0" VerticalAlignment="Top" Width="44"/>
-        <Label x:Name="lblDate" Content="Date" HorizontalAlignment="Left" Margin="13,527,0,0" VerticalAlignment="Top" Width="40"/>
-        <Label x:Name="lblProgram" Content="Program" HorizontalAlignment="Left" Margin="13,499,0,0" VerticalAlignment="Top" Width="65"/>
-        <Label x:Name="lblFileExtension" Content="File Extension" HorizontalAlignment="Left" Margin="13,555,0,0" VerticalAlignment="Top" Width="95"/>
-        <Button x:Name="btnOpenFolder" Content="Open Folder" HorizontalAlignment="Left" Margin="176,592,0,0" VerticalAlignment="Top" Width="86" Click="btnOpenFolder_Click"/>
-        <ListView x:Name="lvFiles" HorizontalAlignment="Left" Height="505" Margin="276,82,0,0" VerticalAlignment="Top" Width="354" SelectedIndex="0">
+        <Label x:Name="lblName" Content="Name" HorizontalAlignment="Left" Margin="13,443,0,0" VerticalAlignment="Top" Width="48" Foreground="White"/>
+        <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="13,471,0,0" VerticalAlignment="Top" Width="44" Foreground="White"/>
+        <Label x:Name="lblDate" Content="Date" HorizontalAlignment="Left" Margin="13,527,0,0" VerticalAlignment="Top" Width="40" Foreground="White"/>
+        <Label x:Name="lblProgram" Content="Program" HorizontalAlignment="Left" Margin="13,499,0,0" VerticalAlignment="Top" Width="65" Foreground="White"/>
+        <Label x:Name="lblFileExtension" Content="File Extension" HorizontalAlignment="Left" Margin="13,555,0,0" VerticalAlignment="Top" Width="95" Foreground="White"/>
+        <Button x:Name="btnOpenFolder" Content="Open Folder" HorizontalAlignment="Left" Margin="176,592,0,0" VerticalAlignment="Top" Width="86" Click="btnOpenFolder_Click" Background="#FFFF9800"/>
+        <ListView x:Name="lvFiles" HorizontalAlignment="Left" Height="505" Margin="316,82,0,0" VerticalAlignment="Top" Width="467" SelectedIndex="0" Background="White" Foreground="Black" BorderBrush="#FF002464">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
@@ -25,10 +27,10 @@
             </ListView.View>
         </ListView>
         <ComboBox x:Name="cbxFileExtensions" HorizontalAlignment="Left" Margin="124,555,0,0" VerticalAlignment="Top" Width="138"/>
-        <Label x:Name="lblFolderName" Content="Folder: " HorizontalAlignment="Left" Margin="276,51,0,0" VerticalAlignment="Top" Width="335"/>
-        <Button x:Name="btnAddHeaderComments" Content="Add Header Comments" HorizontalAlignment="Left" Margin="480,592,0,0" VerticalAlignment="Top" Width="150" Click="btnAddHeaderComments_Click"/>
-        <Button x:Name="btnSetFilesForComments" Content="Used Selected Files To Comment" HorizontalAlignment="Left" Margin="276,592,0,0" VerticalAlignment="Top" Width="186" ToolTip="Selects files and sets values from comment fields to be used." Click="btnSetFilesForComments_Click"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261" Height="216"><Run Text="Instructions:"/><LineBreak/><Run/><LineBreak/><Run Text="1. Enter all fields for comment header."/><LineBreak/><Run/><LineBreak/><Run Text="2. Pick your file extension to search for."/><LineBreak/><Run/><LineBreak/><Run Text="3. Open desired folder with source files."/><LineBreak/><Run/><LineBreak/><Run Text="4. Click Use Selected Files To Comment to set all of the information for the comments."/><LineBreak/><Run/><LineBreak/><Run Text="5. Click Add Header Comments to write to the list of files."/></TextBlock>
+        <Label x:Name="lblFolderName" Content="Folder: " HorizontalAlignment="Left" Margin="316,51,0,0" VerticalAlignment="Top" Width="335" Foreground="White"/>
+        <Button x:Name="btnAddHeaderComments" Content="Add Header Comments" HorizontalAlignment="Left" Margin="633,592,0,0" VerticalAlignment="Top" Width="150" Click="btnAddHeaderComments_Click" Background="#FFFF9800"/>
+        <Button x:Name="btnSetFilesForComments" Content="Used Selected Files To Comment" HorizontalAlignment="Left" Margin="316,592,0,0" VerticalAlignment="Top" Width="186" ToolTip="Selects files and sets values from comment fields to be used." Click="btnSetFilesForComments_Click" Background="#FFFF9800"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="14,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" Height="216" Foreground="White"><Run Text="Instructions:"/><LineBreak/><Run/><LineBreak/><Run Text="1. Enter all fields for comment header."/><LineBreak/><Run/><LineBreak/><Run Text="2. Pick your file extension to search for."/><LineBreak/><Run/><LineBreak/><Run Text="3. Open desired folder with source files."/><LineBreak/><Run/><LineBreak/><Run Text="4. Click Use Selected Files To Comment to set all of the information for the comments."/><LineBreak/><Run/><LineBreak/><Run Text="5. Click Add Header Comments to write to the list of files."/></TextBlock>
 
     </Grid>
 </Window>
